@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Ravi";
+    font-style: normal;
+    font-weight: normal;
+    src: url('./fonts/woff/RaviFaNum-VF.woff') format('woff'),
+    url('./fonts/woff2/RaviFaNum-VF.woff2') format('woff2');
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Ravi";
+}
+
+body a {
+    text-decoration: none !important;
+}
+
+.Toastify__toast-body {
+    font-family: "Ravi" !important;
+}
