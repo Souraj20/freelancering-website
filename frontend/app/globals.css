@@ -21,6 +21,10 @@ html {
 body {
     font-size: 1rem;
     font-family: "Ravi";
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+    font-variation-settings: "wght" 400 "dots" 4;
 }
 
 body a {
