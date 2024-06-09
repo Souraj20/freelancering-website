@@ -29,7 +29,7 @@ const ProfileDetail = () => {
 
                         <Tab label="لیست پروژه ها" value="PROJECTS-LIST"/>
 
-                        <Tab label="افراد متقاضی" value="FREELANCERS-LIST"/>
+                        <Tab label="درخواست ارتباط" value="FREELANCERS-LIST"/>
                     </TabList>
                 </Box>
 

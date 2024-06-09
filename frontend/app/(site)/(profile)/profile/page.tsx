@@ -13,7 +13,7 @@ const ProfilePage = () => {
         <Stack gap={ '30px' }>
             <Stack
                 sx={ { backgroundColor: '#5C6BC0', justifyContent: 'center', alignItems: 'center', padding: '50px' } }>
-                <Text label={ 'پروفایل من' } color={ '#ffffff' } size={ '20px' } weight={ 400 }/>
+                <Text label={ 'پروفایل' } color={ '#ffffff' } size={ '20px' } weight={ 400 }/>
             </Stack>
 
             <Stack sx={ { padding: '0 100px' } }>

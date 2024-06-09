@@ -1,0 +1,61 @@
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+.navbar {
+    width: 950px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    gap: 10px;
+}
+
+.nav .nav__item {
+    position: relative;
+    transition: 200ms;
+}
+
+.nav .nav__item .nav__link {
+    width: 100%;
+    height: 100%;
+    transition: 200ms;
+    border-radius: 3px;
+    display: block;
+    padding: 7px 15px;
+    color: rgb(84 87 103 / 1);
+    font-variation-settings: "wght" 300;
+}
+
+.nav .nav__item:hover .nav__link {
+    background: antiquewhite;
+}
+
+.navbar .navbar-dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms;
+    position: absolute;
+    min-width: 800px;
+    min-height: 200px;
+    border: 1px solid #e0e0e2;
+    background: #ffffff;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    transform: translateX(-50%);
+    z-index: 99999;
+}
+
+.nav .nav__item:hover > .navbar-dropdown {
+    visibility: visible;
+    opacity: 1;
+}

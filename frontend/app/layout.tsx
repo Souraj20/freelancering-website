@@ -2,12 +2,16 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
+import 'swiper/css'
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "@/app/utils/theme";
-import rtlPlugin from "@/app/utils/cacheRtl";
 import { CacheProvider } from "@emotion/react";
 import cacheRtl from "@/app/utils/cacheRtl";
+import { CustomToastContainer } from "@/app/components/Toast/styles";
 
 const metadata: Metadata = {
     title: "Create Next App",
@@ -26,6 +30,8 @@ export default function RootLayout({
             <CacheProvider value={ cacheRtl }>
                 <ThemeProvider theme={ theme }>
                     { children }
+
+                    <CustomToastContainer/>
                 </ThemeProvider>
             </CacheProvider>
         </AppRouterCacheProvider>

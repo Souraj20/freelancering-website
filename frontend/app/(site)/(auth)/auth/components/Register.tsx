@@ -5,13 +5,34 @@ import { Button, CircularProgress, Stack } from "@mui/material";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "@/app/components/text-input/TextInput";
 import SelectMenu from "@/app/components/select-menu/SelectMenu";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 const Register = () => {
 
-    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FieldValues>();
+    const [loading, setLoading] = useState<boolean>(false);
+    const { register, handleSubmit, formState: { errors } } = useForm<FieldValues>();
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-        console.log(data)
+        setLoading(true);
+        const res = new Promise((resolve) => setTimeout(() => resolve(true), 2000));
+
+        await toast.promise(
+            res,
+            {
+                pending: 'در حال ارسال درخواست...',
+                success: {
+                    render({ data }) {
+                        if (data) {
+                            setLoading(false);
+                            return 'ثبت نام با موفقیت انجام شد.';
+                        }
+                    }
+                },
+                error: 'همچین کاربری وجود ندارد.'
+            },
+            { autoClose: 1000 }
+        );
     };
 
     return (
@@ -52,16 +73,10 @@ const Register = () => {
 
                 <Grid xs={ 12 }>
                     <Stack sx={ { width: '100%', alignItems: 'center' } }>
-                        {
-                            isSubmitting ? (
-                                <CircularProgress color="primary"/>
-                            ) : (
-                                <Button sx={ { width: '100%' } } type={ 'submit' } variant={ 'contained' }
-                                        color={ 'primary' }>
-                                    ثبت نام
-                                </Button>
-                            )
-                        }
+                        <Button disabled={ loading } sx={ { width: '100%' } } type={ 'submit' } variant={ 'contained' }
+                                color={ 'primary' }>
+                            ثبت نام
+                        </Button>
                     </Stack>
                 </Grid>
             </Grid>

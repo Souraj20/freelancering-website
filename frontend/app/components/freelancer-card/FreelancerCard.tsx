@@ -1,13 +1,18 @@
-'use client'
 import React from 'react';
 import Grid from "@mui/material/Unstable_Grid2";
-import { Avatar, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Stack, Typography } from "@mui/material";
 import testUser from "@/app/assets/images/user/img-10.jpg";
 import Text from "@/app/components/text/Text";
+import Link from "next/link";
 
-const FreelancerRow = () => {
+const FreelancerCard = () => {
     return (
-        <Grid container sx={ { border: '1px solid rgb(204 206 214 / 0.5)', padding: '10px', borderRadius: '5px' } }>
+        <Grid container sx={ {
+            border: '1px solid rgb(204 206 214 / 0.5)',
+            padding: '10px',
+            borderRadius: '5px',
+            margin: '0 100px'
+        } }>
             <Grid xs={ 3 }>
                 <Stack direction={ 'row' } gap={ '5px' }>
                     <Stack>
@@ -47,38 +52,16 @@ const FreelancerRow = () => {
             </Grid>
 
             <Grid xs={ 2 }>
-                <Grid container spacing={ 2 } justifyContent={ 'center' }>
-                    <Grid xs={ 6 }>
-                        <Stack sx={ { width: '100%' } }>
-                            <Typography
-                                sx={ {
-                                    padding: '8px',
-                                    backgroundColor: '#4CAF50',
-                                    borderRadius: '3px',
-                                    color: '#ffffff'
-                                } }>
-                                قبول
-                            </Typography>
-                        </Stack>
-                    </Grid>
-
-                    <Grid xs={ 6 }>
-                        <Stack sx={ { width: '100%' } }>
-                            <Typography
-                                sx={ {
-                                    padding: '8px',
-                                    backgroundColor: '#e84e5f',
-                                    borderRadius: '3px',
-                                    color: '#ffffff'
-                                } }>
-                                رد
-                            </Typography>
-                        </Stack>
-                    </Grid>
-                </Grid>
+                <Stack sx={ { width: '100%' } }>
+                    <Link href={ '/user/add-request' }>
+                        <Button variant={ 'contained' } color={ 'primary' }>
+                            دعوت به همکاری
+                        </Button>
+                    </Link>
+                </Stack>
             </Grid>
         </Grid>
     );
 };
 
-export default FreelancerRow;
+export default FreelancerCard;

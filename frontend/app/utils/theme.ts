@@ -3,7 +3,6 @@
 import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
-    direction: 'rtl',
     typography: {
         fontFamily: "Ravi",
         htmlFontSize: 14,
@@ -11,4 +10,11 @@ export const theme = createTheme({
             fontSize: '1rem'
         }
     },
+    components: {
+        MuiPagination: {
+            defaultProps: {
+                dir: 'ltr'
+            }
+        }
+    }
 });

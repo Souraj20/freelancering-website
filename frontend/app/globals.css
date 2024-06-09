@@ -21,9 +21,9 @@ html {
 body {
     font-size: 1rem;
     font-family: "Ravi";
-    -moz-font-feature-settings: "ss02";
-    -webkit-font-feature-settings: "ss02";
-    font-feature-settings: "ss02";
+    -moz-font-feature-settings: "ss04";
+    -webkit-font-feature-settings: "ss04";
+    font-feature-settings: "ss04";
     font-variation-settings: "wght" 400 "dots" 4;
 }
 
@@ -32,5 +32,6 @@ body a {
 }
 
 .Toastify__toast-body {
+    direction: rtl !important;
     font-family: "Ravi" !important;
 }
